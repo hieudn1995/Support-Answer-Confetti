@@ -22,3 +22,4 @@ exports.run = async (client, message, args, tool) => {
   message.delete({timeout: 1000});
   
   }
+client.login(process.env.BOT_TOKEN);//where
