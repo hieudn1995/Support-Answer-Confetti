@@ -14,20 +14,6 @@
     "start": "node bot.js"
 
   },
-  
-    "name": "poll",
-
-  "description": "poll",
-
-  "version": "0.0.0",
-
-  "main": "poll.js",
-
-  "scripts": {
-
-    "start": "node poll.js"
-
-  },
 
   "dependencies": {
 
