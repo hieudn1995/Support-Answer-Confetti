@@ -10,7 +10,7 @@ exports.run = async (client, message, args, tool) => {
   
   const embed = new Discord.MessageEmbed()
     .setColor(0xffffff)
-    .setfooter('React to vote'.
+    .setfooter('React to vote')
     .setDescription(args.join(' '))
     .setTitle('Poll Created by ${message.author.username}');
     
