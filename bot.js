@@ -1,27 +1,13 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js')
 
-exports.run = async (client, message, args, tool) => {
-
-  if (!message.member.roles.find(r => r.name === 'roleName')) return message.channel.send('This require the role: rolename');
-  
-  if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('This require the permission: ADMINISTRATOR');
-  
-  if (!args[0]) return.channel.send('Proper usage: <prefix> Poll question');
-  
-  const embed = new Discord.MessageEmbed()
-    .setColor(0xffffff)
-    .setfooter('React to vote')
-    .setDescription(args.join(' '))
-    .setTitle('Poll Created by ${message.author.username}');
-    
-  let msg = await message.channel.send(embed);
-   
-  await msg.react('1');
-  await msg.react('2');
-  
-  message.delete({timeout: 1000});
-  
-  }
+exports.run = async (bot, message, args) => {
+  if (!args) return message.reply("You must have something to vote for!")
+  if (!message.content.includes("?")) return message.reply("Include a ? in your vote!")
+    message.channel.send(`:ballot_box:  ${message.author.username} started a vote! React to my next message to vote on it. :ballot_box: `);
+    const pollTopic = await message.channel.send(`${args}`);
+    pollTopic.react(`1`);
+    pollTopic.react(`2`);
+};
  
 
 // THIS  MUST  BE  THIS  WAY
